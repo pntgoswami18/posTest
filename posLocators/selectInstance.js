@@ -12,19 +12,19 @@ selectInstance.prototype = Object.create({}, {
 
     instance: {
         get: function() {
-            return this.instanceCard.all(by.className('card-section'));
+            return this.instanceCard.all(by.className('card-section')).get(0);
         }
     },
 
     goBackButton: {
         get: function() {
-            return this.instanceCard.all(by.xpath('.//*[@class="custom-button secondary-button"]/ancestor::div[1]'));
+            return this.instanceCard.all(by.xpath('.//*[@class="custom-button secondary-button"]/ancestor::div[1]')).get(0);
         }
     },
 
-    continue: {
+    continueButton: {
         get: function() {
-            return this.instanceCard.all(by.className('custom-button primary-button'));
+            return this.instanceCard.all(by.className('custom-button primary-button')).get(0);
         }
     }
 

@@ -21,8 +21,7 @@ capabilities: {
         'shardTestFiles': false,
         'browserName': 'chrome',
         'chromeOptions': {
-            'args': ['show-fps-counter=true'],
-            //'args': [ "--headless", "--disable-gpu", "--window-size=800,600" ],
+            'args': [ "--headless", "--disable-gpu", "--window-size=1024,768" ],
             'prefs': {
                 'credentials_enable_service': false,
                 'profile': {

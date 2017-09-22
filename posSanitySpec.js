@@ -36,10 +36,32 @@ describe('cPOS Sanity Test', function(){
         login.userName.sendKeys('test');
         login.password.sendKeys('test');
         login.loginButton.click();
-        expect(commonUtils.eventual(protractor.ExpectedConditions.presenceOf(selectOutlet.outletCard))).toBe(true, 'Eventual failed');
+        
+        // wait for outletCard to appear until 10 seconds passby
+        expect(commonUtils.eventual(selectOutlet.outletCard)).toBe(true, 'Outlet Card was not visible');
 
-        expect(selectOutlet.outletCard.isDisplayed()).toBe(true, 'User was not logged in');
+    });
 
+    it('Should select the outlet successfully', function(){
+        selectOutlet = new posSelectOutlet();
+        selectInstance = new posSelectInstance();
+
+        expect(selectOutlet.outletsList.isDisplayed()).toBe(true, 'Outlet list was not populated');
+
+        selectOutlet.outlet.click();
+        selectOutlet.continueButton.click();
+
+        expect(commonUtils.eventual(selectInstance.instanceCard)).toBe(true, 'Instance Card was not visible');
+
+    });
+
+    it('Should select the instance successfully', function(){
+        selectInstance = new posSelectInstance();
+
+        expect(selectInstance.instance.isDisplayed()).toBe(true, 'Instances were not displayed');
+        
+        selectInstance.instance.click();
+        selectInstance.continueButton.click();
 
     });
 

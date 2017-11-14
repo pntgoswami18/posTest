@@ -12,4 +12,11 @@ commonUtils.eventual = function(locator) {
   });
 };
 
+commonUtils.clickNTimes = function(locator, n) {
+  for(var i = 0; i < n; i++){
+    locator.click();
+    browser.waitForAngular();
+  }
+};
+
 module.exports = commonUtils;

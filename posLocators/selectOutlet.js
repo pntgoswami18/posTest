@@ -2,6 +2,8 @@ var selectOutlet = function() {
 
 };
 
+var outletName = 'OnlyDeliveryOutlet';
+
 selectOutlet.prototype = Object.create({},{
 
     outletCard: {
@@ -18,7 +20,7 @@ selectOutlet.prototype = Object.create({},{
 
     outlet: {
         get: function() {
-            return this.outletsList.all(by.className('card-section')).get(0);
+            return this.outletsList.all(by.xpath(".//*[text()='"+outletName+"'][1]"));
         }
     },
 

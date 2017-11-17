@@ -29,6 +29,8 @@ describe('cPOS Sanity Test', function(){
     it('Should Load POS Login Page Successfully', function(){
         login = new posLogin();
 
+        browser.wait(protractor.ExpectedConditions.alertIsPresent(), 5000, "Alert is not getting present ")
+        browser.switchTo().alert().accept();
         expect(commonUtils.eventual(login.loginCard)).toBe(true, "Login Card was not present");
 
         expect(login.loginCard.isDisplayed()).toBe(true, 'Login Card was not visible');
@@ -69,7 +71,7 @@ describe('cPOS Sanity Test', function(){
 
         selectOutlet.outlet.click();
         selectOutlet.continueButton.click();
-
+        
         expect(commonUtils.eventual(selectInstance.instanceCard)).toBe(true, 'Instance Card was not visible');
 
     });

@@ -16,6 +16,7 @@ onPrepare: function() {
             fileNameDateSuffix: false
         })
     );
+    browser.manage().timeouts().implicitlyWait(5000);
 },
 capabilities: {
         'shardTestFiles': false,

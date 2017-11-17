@@ -20,13 +20,13 @@ selectOutlet.prototype = Object.create({},{
 
     outlet: {
         get: function() {
-            return this.outletsList.all(by.xpath(".//*[text()='"+outletName+"'][1]"));
+            return this.outletsList.all(by.xpath("//*[text()='"+outletName+"']/ancestor::div[4]/input")).get(0);
         }
     },
 
     continueButton: {
         get: function() {
-            return this.outletCard.all(by.className('custom-button primary-button'));
+            return this.outletCard.all(by.className('custom-button primary-button')).get(0);
         }
     }
 

@@ -19,7 +19,7 @@ describe('cPOS Sanity Test', function(){
 
 
     afterAll(() => {
-        console.log("\n********\nReport at: file:///Users/pntgoswami18/POS-TEST/reports/htmlReport.html \n********\n");
+        console.log("\n********\nReport at: file:///Users/pntgoswami18/Web/POS-TEST/reports/htmlReport.html \n********\n");
     })
 
     /*
